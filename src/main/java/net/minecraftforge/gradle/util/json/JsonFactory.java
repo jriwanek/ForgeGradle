@@ -26,7 +26,6 @@ import java.io.IOException;
 import java.util.*;
 import java.util.Map.Entry;
 
-import com.beust.jcommander.internal.Lists;
 import com.google.common.base.Strings;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
@@ -40,8 +39,6 @@ import com.google.gson.JsonSyntaxException;
 import net.minecraftforge.gradle.util.json.LiteLoaderJson.VersionObject;
 import net.minecraftforge.gradle.util.json.fgversion.FGVersionDeserializer;
 import net.minecraftforge.gradle.util.json.fgversion.FGVersionWrapper;
-import net.minecraftforge.gradle.util.json.forgeversion.ForgeArtifact;
-import net.minecraftforge.gradle.util.json.forgeversion.ForgeArtifactAdapter;
 import net.minecraftforge.gradle.util.json.version.AssetIndex;
 import net.minecraftforge.gradle.util.json.version.ManifestVersion;
 import net.minecraftforge.gradle.util.json.version.Version;
@@ -57,7 +54,6 @@ public class JsonFactory
         builder.registerTypeAdapter(Date.class, new DateAdapter());
         builder.registerTypeAdapter(File.class, new FileAdapter());
         builder.registerTypeAdapter(VersionObject.class, new LiteLoaderJson.VersionAdapter());
-        builder.registerTypeAdapter(ForgeArtifact.class, new ForgeArtifactAdapter());
         builder.registerTypeAdapter(FGVersionWrapper.class, new FGVersionDeserializer());
         builder.registerTypeAdapter(FGVersionWrapper.class, new FGVersionDeserializer());
         builder.registerTypeAdapter(new TypeToken<Map<String, ManifestVersion>>() {}.getType(), new MojangManifestAdapter());
