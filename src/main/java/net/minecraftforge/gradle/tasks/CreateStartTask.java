@@ -96,7 +96,7 @@ public class CreateStartTask extends CachedTask
             {
                 out = out.replace(replacement.getKey(), (String) replacement.getValue());
             }
-            
+
             // replace extra lines
             if (!extraLines.isEmpty())
             {
@@ -146,7 +146,7 @@ public class CreateStartTask extends CachedTask
                     .put("target", "1.6")
                     .put("debug", "true")
                     .build());
-            
+
             // copy the sources too, for debugging through GradleStart
             getProject().fileTree(resourceDir).visit(new FileVisitor() {
 
@@ -161,7 +161,7 @@ public class CreateStartTask extends CachedTask
                 {
                     arg0.copyTo(arg0.getRelativePath().getFile(compiled));
                 }
-                
+
             });
         }
 
@@ -196,7 +196,7 @@ public class CreateStartTask extends CachedTask
     {
         if (obj == null)
             return null;
-        
+
         if (obj instanceof Closure)
             return resolveString(((Closure) obj).call());
         else if (obj instanceof File)

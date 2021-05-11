@@ -149,7 +149,7 @@ public class TaskRecompileMc extends CachedTask
         JarOutputStream zout = new JarOutputStream(new FileOutputStream(outJar));
 
         Visitor visitor = new Visitor(zout, elementsAdded);
-        
+
         // custom resources should override existing ones, so resources first.
         if (resourceJar != null)
         {
